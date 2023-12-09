@@ -11,12 +11,280 @@ html {
     margin: 0;
     padding: 0;
     line-height: 0;
+    font-size: 100%;
+}
+body {
+    background: radial-gradient(
+        circle,
+        rgba(175, 175, 175, 1) 0%,
+        rgb(160, 160, 160) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    aspect-ratio: 9/16;
+    margin-inline: auto;
+    padding: 1rem;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
 }
 
 .parent-container {
-    display: flex;
-    flex-direction: column;
+    display: inherit;
+    gap: 1rem;
 }
 
-.button-container {
+.row {
+    &__one {
+        display: inherit;
+        gap: 1rem;
+    }
+}
+
+.button {
+    width: 125px;
+    height: 125px;
+
+    &__one {
+        @extend .button;
+        background: linear-gradient(
+            180deg,
+            rgba(141, 141, 141, 1) 0%,
+            rgba(181, 181, 181, 1) 50%,
+            rgba(94, 94, 94, 1) 100%
+        );
+        border-radius: 50%;
+
+        & .emboss {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+
+            &-one {
+                @extend .emboss;
+                scale: 0.85;
+                background: #222;
+                border-radius: 50%;
+            }
+
+            &-two {
+                @extend .emboss;
+                scale: 0.97;
+                background: #434343;
+                border-radius: 50%;
+                box-shadow: 0 0 5px 0 #434343;
+            }
+
+            &-three {
+                @extend .emboss;
+                scale: 0.85;
+                background: #5d5d5d;
+                border-radius: 50%;
+            }
+
+            &-four {
+                @extend .emboss;
+                align-items: flex-start;
+                scale: 0.95;
+                background: linear-gradient(
+                    175deg,
+                    rgba(55, 55, 55, 1) 0%,
+                    rgba(117, 117, 117, 1) 100%
+                );
+                border-radius: 50%;
+
+                .glow {
+                    margin-top: 1rem;
+                    width: 10px;
+                    height: 30px;
+                    background-color: #00ffd8;
+                    border-radius: 10px;
+                    box-shadow: 0 0 10px 0px #00ffd8;
+                }
+            }
+        }
+    }
+
+    &__two {
+        @extend .button;
+        background: linear-gradient(
+            180deg,
+            rgba(141, 141, 141, 1) 0%,
+            rgba(181, 181, 181, 1) 50%,
+            rgba(94, 94, 94, 1) 100%
+        );
+        border-radius: 50%;
+
+        & .emboss {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+
+            &-one {
+                @extend .emboss;
+                scale: 0.85;
+                background: #222;
+                border-radius: 50%;
+            }
+
+            &-two {
+                @extend .emboss;
+                scale: 0.97;
+                background: #7b7b7b;
+                border-radius: 50%;
+                box-shadow: 0 0 5px 0 #434343;
+            }
+
+            &-three {
+                @extend .emboss;
+                scale: 0.85;
+                background: #a3a3a3;
+                border-radius: 50%;
+            }
+
+            &-four {
+                @extend .emboss;
+                align-items: flex-start;
+                scale: 0.95;
+                background: linear-gradient(
+                    175deg,
+                    rgba(93, 93, 93, 1) 0%,
+                    rgba(226, 226, 226, 1) 100%
+                );
+                border-radius: 50%;
+
+                .glow-off {
+                    margin-top: 1rem;
+                    width: 10px;
+                    height: 30px;
+                    background-color: #1b1b1b;
+                    border-radius: 10px;
+                    box-shadow: 0 2px 0px 0px #e2e2e2;
+                }
+            }
+        }
+    }
+
+    &__three {
+        @extend .button;
+        background: #242424;
+        border-radius: 24px;
+        display: flex;
+        width: fit-content;
+
+        & .emboss {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 125px;
+            height: 100%;
+
+            &-one {
+                @extend .emboss;
+                background: linear-gradient(
+                    175deg,
+                    rgba(98, 98, 98, 1) 0%,
+                    rgba(82, 82, 82, 1) 100%
+                );
+                scale: 0.85;
+                border-radius: 24px;
+            }
+
+            &-two {
+                @extend .emboss;
+                scale: 0.9;
+                background: #7b7b7b;
+                border-radius: 50%;
+            }
+
+            &-three {
+                @extend .emboss;
+                scale: 0.95;
+                background: radial-gradient(
+                    at bottom left,
+                    rgba(163, 163, 163, 1) 0%,
+                    rgba(76, 76, 76, 1) 75%
+                );
+                border-radius: 50%;
+            }
+
+            .glow {
+                width: 30px;
+                height: 30px;
+                background-color: #1b1b1b;
+                border-radius: 50%;
+                box-shadow: 0 2px 0px 0px #a4a4a4;
+            }
+        }
+    }
+
+    &__four {
+        @extend .button;
+        background: #242424;
+        border-radius: 24px;
+        display: flex;
+        width: fit-content;
+
+        & .emboss {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 125px;
+            height: 100%;
+
+            &-one {
+                @extend .emboss;
+                background: linear-gradient(
+                    175deg,
+                    rgba(98, 98, 98, 1) 0%,
+                    rgba(82, 82, 82, 1) 100%
+                );
+                scale: 0.85;
+                border-radius: 24px;
+                transform: translateX(-0.25rem);
+            }
+
+            &-two {
+                @extend .emboss;
+                scale: 0.9;
+                background: #7b7b7b;
+                border-radius: 50%;
+            }
+
+            &-three {
+                @extend .emboss;
+                scale: 0.95;
+                background: radial-gradient(
+                    at bottom left,
+                    rgba(163, 163, 163, 1) 0%,
+                    rgba(76, 76, 76, 1) 75%
+                );
+                border-radius: 50%;
+            }
+
+            .glow {
+                width: 30px;
+                height: 30px;
+                background-color: #00ffd8;
+                border-radius: 50%;
+                box-shadow: 0 0 10px 0 #00ffd8;
+            }
+        }
+    }
+}
+
+.text {
+    font-family: "Noto Sans", sans-serif;
+    color: #242424;
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+    display: block;
+    flex-shrink: 0;
+    text-shadow: 0 2px 0 #cfcfcf;
+    text-transform: uppercase;
 }
